@@ -35,10 +35,6 @@ Aplikasi ini dikembangkan oleh:
 - **Email**: azmidhanial@gmail.com / afifdhanialazmiyahya@students.undip.ac.id
 - **Website/GitHub**: [azmidhanial](https://github.com/afifdhanialazmiyahya)
 
-## Kontribusi
-
-Kontribusi terhadap proyek ini sangat diterima! Jika Anda ingin berkontribusi, silakan fork repositori ini dan buat pull request dengan deskripsi perubahannya.
-
 ## Ucapan Terima Kasih
 
 Terima kasih kepada [ikhbaldwiyan](https://github.com/ikhbaldwiyan) atas pengembangan API [jkt48-showroom-api](https://github.com/ikhbaldwiyan/jkt48-showroom-api) yang digunakan dalam aplikasi ini.
