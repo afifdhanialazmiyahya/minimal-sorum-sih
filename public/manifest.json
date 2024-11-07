@@ -1,0 +1,25 @@
+{
+  "short_name": "MinimalSorumSih",
+  "name": "Minimal Sorum Sih",
+  "icons": [
+    {
+      "src": "%PUBLIC_URL%/Logo-_512.ico",
+      "sizes": "512x512",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/public/icons/Logo-@192.svg",
+      "type": "image/svg",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/public/icons/Logo-@512.svg",
+      "type": "image/svg",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
