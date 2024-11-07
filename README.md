@@ -35,10 +35,6 @@ Aplikasi ini dikembangkan oleh:
 - **Email**: azmidhanial@gmail.com / afifdhanialazmiyahya@students.undip.ac.id
 - **Website/GitHub**: [azmidhanial](https://github.com/afifdhanialazmiyahya)
 
-## Lisensi
-
-Aplikasi ini dilisensikan di bawah [Lisensi MIT](LICENSE).
-
 ## Kontribusi
 
 Kontribusi terhadap proyek ini sangat diterima! Jika Anda ingin berkontribusi, silakan fork repositori ini dan buat pull request dengan deskripsi perubahannya.
