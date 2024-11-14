@@ -16,7 +16,7 @@ const TheaterSchedule = () => {
   useEffect(() => {
     const fetchSchedules = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/api/rooms/theater-schedule");
+        const response = await axios.get("https://jkt48-sr-api-tubes.vercel.app/api/rooms/theater-schedule");
         setSchedules(response.data); // Mengatur data jadwal
       } catch (error) {
         console.error("Error:", error);
