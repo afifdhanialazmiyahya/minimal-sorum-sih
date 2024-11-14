@@ -123,7 +123,7 @@ const MemberDetail = () => {
 
     const fetchFanLetters = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/api/rooms/fan-letters/${id}`);
+        const response = await axios.get(`https://jkt48-sr-api-tubes.vercel.app//api/rooms/fan-letters/${id}`);
         if (response.data) {
           setFanLetters(response.data);
         }
