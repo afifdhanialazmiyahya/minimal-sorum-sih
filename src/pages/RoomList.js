@@ -17,7 +17,7 @@ const RoomList = () => {
   useEffect(() => {
     const fetchMembers = async () => {
       try {
-        const [roomsResponse, academyResponse] = await Promise.all([axios.get("http://localhost:8000/api/rooms"), axios.get("http://localhost:8000/api/rooms/academy")]);
+        const [roomsResponse, academyResponse] = await Promise.all([axios.get("https://jkt48-sr-api-tubes.vercel.app/api/rooms"), axios.get("https://jkt48-sr-api-tubes.vercel.app/api/rooms/academy")]);
 
         const allMembers = [
           ...roomsResponse.data,
