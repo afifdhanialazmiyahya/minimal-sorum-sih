@@ -1,91 +1,3 @@
-// import React, { useEffect, useState } from "react";
-// import { useParams } from "react-router-dom";
-// import axios from "axios";
-
-// const MemberDetail = () => {
-//   const { id } = useParams(); // Mengambil id dari URL
-//   const [profile, setProfile] = useState(null);
-//   const [loading, setLoading] = useState(true);
-
-//   useEffect(() => {
-//     const fetchProfile = async () => {
-//       try {
-//         const response = await axios.get(`http://localhost:8000/api/rooms/${id}`); // Memanggil API dengan id
-//         if (response.data) {
-//           setProfile(response.data); // Mengatur data profil
-//         } else {
-//           console.error("Profile data not found");
-//         }
-//       } catch (error) {
-//         console.error("Error:", error);
-//       } finally {
-//         setLoading(false);
-//       }
-//     };
-
-//     fetchProfile();
-//   }, [id]);
-
-//   if (loading) {
-//     return <p>Loading...</p>;
-//   }
-
-//   if (!profile) {
-//     return <p>Profile data not available...</p>;
-//   }
-
-//   // Fungsi untuk memformat deskripsi
-//   const formatDescription = (description) => {
-//     const lines = description.split("\r\n"); // Pisahkan deskripsi berdasarkan baris baru
-//     const info = {}; // Objek untuk menyimpan informasi yang diekstrak
-
-//     lines.forEach((line) => {
-//       const [key, value] = line.split(":"); // Pisahkan kunci dan nilai berdasarkan ':'
-//       if (key && value) {
-//         info[key.trim()] = value.trim(); // Simpan dalam objek dengan trimming
-//       }
-//     });
-
-//     return info; // Kembalikan objek informasi
-//   };
-
-//   const memberInfo = formatDescription(profile.description); // Format deskripsi
-
-//   return (
-//     <div className="p-4 max-w-md mx-auto bg-white rounded-lg shadow-md text-center">
-//       {/* Tampilkan nama anggota di bagian atas */}
-//       <h1 className="text-xl font-bold mt-4 mb-2">{memberInfo["Name"] || profile.name}</h1>
-//       {profile.image_url && <img src={profile.image_url} alt={profile.name} className="w-full h-64 object-cover rounded-md mx-auto" />}
-//       <h2 className="text-2xl font-bold mt-4">{profile.name}</h2>
-
-//       {/* Tampilkan informasi anggota yang diformat */}
-//       {memberInfo && (
-//         <div className="mt-4 text-gray-600">
-//           <p>
-//             <strong>Birthday:</strong> {memberInfo["Birthday"]}
-//           </p>
-//           <p>
-//             <strong>Birthplace:</strong> {memberInfo["Birthplace"]}
-//           </p>
-//           <p>
-//             <strong>Blood Type:</strong> {memberInfo["Blood type"]}
-//           </p>
-//           <p>
-//             <strong>Zodiac Signs:</strong> {memberInfo["Zodiac signs"]}
-//           </p>
-//           <p>
-//             <strong>Hobby:</strong> {memberInfo["Hobby"]}
-//           </p>
-//         </div>
-//       )}
-//     </div>
-
-//     // buat bagian fanletter disini
-//   );
-// };
-
-// export default MemberDetail;
-
 // src/pages/MemberDetail.js
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -108,7 +20,7 @@ const MemberDetail = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/api/rooms/${id}`);
+        const response = await axios.get(`https://jkt48-showroom-api-tubes.vercel.app/api/rooms/${id}`);
         if (response.data) {
           setProfile(response.data);
         } else {
@@ -123,7 +35,7 @@ const MemberDetail = () => {
 
     const fetchFanLetters = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/api/rooms/fan-letters/${id}`);
+        const response = await axios.get(`https://jkt48-showroom-api-tubes.vercel.app/api/rooms/fan-letters/${id}`);
         if (response.data) {
           setFanLetters(response.data);
         }

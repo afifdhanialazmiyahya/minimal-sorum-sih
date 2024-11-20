@@ -12,7 +12,7 @@ const Room = () => {
   useEffect(() => {
     const fetchRoomData = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/api/rooms/${roomId}`);
+        const response = await axios.get(`https://jkt48-showroom-api-tubes.vercel.app/api/rooms/${roomId}`);
         setShareUrlLive(response.data.share_url_live);
       } catch (error) {
         console.error("Error fetching room data:", error);
