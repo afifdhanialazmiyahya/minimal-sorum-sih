@@ -20,7 +20,11 @@ const MemberDetail = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
+<<<<<<< HEAD
         const response = await axios.get(`https://jkt48-showroom-api-tubes.vercel.app/api/rooms/${id}`);
+=======
+        const response = await axios.get(`https://jkt48-sr-api-tubes.vercel.app/api/rooms/${id}`);
+>>>>>>> 648420afa68b18f3ea8f4e58c0f093502299722e
         if (response.data) {
           setProfile(response.data);
         } else {
@@ -35,7 +39,11 @@ const MemberDetail = () => {
 
     const fetchFanLetters = async () => {
       try {
+<<<<<<< HEAD
         const response = await axios.get(`https://jkt48-showroom-api-tubes.vercel.app/api/rooms/fan-letters/${id}`);
+=======
+        const response = await axios.get(`https://jkt48-sr-api-tubes.vercel.app/api/rooms/fan-letters/${id}`);
+>>>>>>> 648420afa68b18f3ea8f4e58c0f093502299722e
         if (response.data) {
           setFanLetters(response.data);
         }

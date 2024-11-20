@@ -98,10 +98,14 @@ const OnLive = () => {
     const fetchLiveStreams = async () => {
       try {
         // Mengambil data dari kedua API secara bersamaan
+<<<<<<< HEAD
         const [roomsResponse, academyResponse] = await Promise.all([
           axios.get("https://jkt48-showroom-api-tubes.vercel.app/api/rooms"),
           axios.get("https://jkt48-showroom-api-tubes.vercel.app/api/rooms/academy"),
         ]);
+=======
+        const [roomsResponse, academyResponse] = await Promise.all([axios.get("https://jkt48-sr-api-tubes.vercel.app/api/rooms"), axios.get("https://jkt48-sr-api-tubes.vercel.app/api/rooms/academy")]);
+>>>>>>> 648420afa68b18f3ea8f4e58c0f093502299722e
 
         // Menggabungkan data dari API rooms dan academy dengan menyesuaikan properti
         const combinedLiveStreams = [
@@ -121,7 +125,11 @@ const OnLive = () => {
         // Mengambil share_url_live untuk setiap item
         const urls = {};
         for (const item of combinedLiveStreams) {
+<<<<<<< HEAD
           const itemData = await axios.get(`https://jkt48-showroom-api-tubes.vercel.app/api/rooms/${item.id}`);
+=======
+          const itemData = await axios.get(`https://jkt48-sr-api-tubes.vercel.app/api/rooms/${item.id}`);
+>>>>>>> 648420afa68b18f3ea8f4e58c0f093502299722e
           urls[item.id] = itemData.data.share_url_live;
         }
         setShareUrls(urls);

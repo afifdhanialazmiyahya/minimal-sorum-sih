@@ -17,10 +17,14 @@ const RoomList = () => {
   useEffect(() => {
     const fetchMembers = async () => {
       try {
+<<<<<<< HEAD
         const [roomsResponse, academyResponse] = await Promise.all([
           axios.get("https://jkt48-showroom-api-tubes.vercel.app/api/rooms"),
           axios.get("https://jkt48-showroom-api-tubes.vercel.app/api/rooms/academy"),
         ]);
+=======
+        const [roomsResponse, academyResponse] = await Promise.all([axios.get("https://jkt48-sr-api-tubes.vercel.app/api/rooms"), axios.get("https://jkt48-sr-api-tubes.vercel.app/api/rooms/academy")]);
+>>>>>>> 648420afa68b18f3ea8f4e58c0f093502299722e
 
         const allMembers = [
           ...roomsResponse.data,
