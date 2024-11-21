@@ -9,6 +9,7 @@ import MemberDetail from "./pages/MemberDetail";
 import TheaterSchedule from "./pages/TheaterSchedule";
 import About from "./pages/About";
 import Room from "./pages/Room"; // Import halaman Room untuk menampilkan live stream
+import ScheduleDetail from "./pages/ScheduleDetail";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/room-list" element={<RoomList />} />
           <Route path="/members/:id" element={<MemberDetail />} />
           <Route path="/theater-schedule" element={<TheaterSchedule />} />
+          <Route path="/schedule/:scheduleId" element={<ScheduleDetail />} />
           <Route path="/about" element={<About />} />
           {/* Route untuk menampilkan room live berdasarkan hanya roomId */}
           <Route path="/room/:roomId" element={<Room />} />

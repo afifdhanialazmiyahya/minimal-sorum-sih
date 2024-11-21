@@ -1,4 +1,7 @@
+// export default TheaterSchedule;
+
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const LoadingSpinner = () => {
@@ -11,17 +14,18 @@ const LoadingSpinner = () => {
 
 const TheaterSchedule = () => {
   const [schedules, setSchedules] = useState([]);
-  const [loading, setLoading] = useState(true); // State untuk loading
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchSchedules = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/api/rooms/theater-schedule");
-        setSchedules(response.data); // Mengatur data jadwal
+        const response = await axios.get("https://jkt48-showroom-api-tubes.vercel.app/api/rooms/theater-schedule");
+        setSchedules(response.data);
       } catch (error) {
         console.error("Error:", error);
       } finally {
-        setLoading(false); // Set loading ke false setelah selesai mengambil data
+        setLoading(false);
       }
     };
 
@@ -29,7 +33,7 @@ const TheaterSchedule = () => {
   }, []);
 
   if (loading) {
-    return <LoadingSpinner />; // Tampilkan spinner saat loading
+    return <LoadingSpinner />;
   }
 
   return (
@@ -37,22 +41,18 @@ const TheaterSchedule = () => {
       <h1 className="text-3xl font-bold text-center mb-6">Theater Schedule</h1>
       <div className="grid grid-cols-1 gap-6">
         {schedules.map((schedule) => (
-          <a
-            href={schedule.entrance_url}
+          <div
             key={schedule.paid_live_id}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+            onClick={() => navigate(`/schedule/${schedule.paid_live_id}`)}
+            className="block bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 cursor-pointer"
           >
             <div>
-              {schedule.image && <img src={schedule.image} alt={schedule.title} className="w-full h-48 object-cover" />}
+              {schedule.image && <img src={schedule.image} alt={schedule.title} className="w-full h-full object-cover" />}
               <div className="p-4">
                 <h2 className="text-xl font-semibold mb-2">{schedule.title}</h2>
-                <p className="text-gray-600">Room: {schedule.room_name}</p>
-                <p className="text-gray-600">Date: {new Date(schedule.start_at * 1000).toLocaleString()}</p>
               </div>
             </div>
-          </a>
+          </div>
         ))}
       </div>
     </div>
