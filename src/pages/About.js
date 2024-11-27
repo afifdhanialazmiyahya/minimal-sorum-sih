@@ -49,7 +49,7 @@ const About = () => {
 
           {/* Profile Image */}
           <img
-            src={`${process.env.PUBLIC_URL}/PP.png`} // Menggunakan path relatif setelah memindahkan gambar ke folder public
+            src={`${process.env.PUBLIC_URL}/PP.png`}
             alt="Developer Profile"
             className="w-24 h-24 rounded-full mx-auto mb-4"
           />

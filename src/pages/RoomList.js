@@ -60,7 +60,7 @@ const RoomList = () => {
                 <h2 className="text-xl font-semibold">{member.name}</h2>
                 <p className="text-gray-500">Followers: {member.follower_num}</p>
 
-                {/* Status Live with conditional rendering */}
+                {/* Status Live */}
                 {member.is_live ? (
                   <div className="flex items-center justify-between bg-green-500 p-2 rounded-lg mt-2">
                     <span className="text-white font-bold">Live</span>

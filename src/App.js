@@ -8,15 +8,14 @@ import RoomList from "./pages/RoomList";
 import MemberDetail from "./pages/MemberDetail";
 import TheaterSchedule from "./pages/TheaterSchedule";
 import About from "./pages/About";
-import Room from "./pages/Room"; // Import halaman Room untuk menampilkan live stream
+import Room from "./pages/Room";
 import ScheduleDetail from "./pages/ScheduleDetail";
 
 const App = () => {
   return (
     <Router>
-      <Header /> {/* Tambahkan Header jika diinginkan */}
+      <Header />
       <div className="pt-16">
-        {/* Padding top agar konten tidak tertutup header */}
         <Navbar />
         <Routes>
           <Route path="/" element={<OnLive />} />
@@ -25,7 +24,6 @@ const App = () => {
           <Route path="/theater-schedule" element={<TheaterSchedule />} />
           <Route path="/schedule/:scheduleId" element={<ScheduleDetail />} />
           <Route path="/about" element={<About />} />
-          {/* Route untuk menampilkan room live berdasarkan hanya roomId */}
           <Route path="/room/:roomId" element={<Room />} />
         </Routes>
       </div>
